@@ -1,0 +1,47 @@
+.heading-primary {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.heading-secondary {
+    font-weight: 600;
+    color: $color-blue-dark-1;
+}
+
+.heading-tertiary {
+    font-weight: 600;
+
+    &--light {
+        color: $color-grey-light-1;
+    }
+
+    &--dark {
+       color: $color-blue-dark-1;
+    }
+}
+
+.paragraph {
+    line-height: 1.5;
+    font-size: 1.6rem;
+
+    &--white {
+        color: $color-white;
+    }
+
+    &--light-1 {
+        color: $color-grey-light-1;
+    }
+
+    &--light-2 {
+        color: $color-grey-light-2;
+    }
+
+    &--light-3 {
+        color: $color-grey-light-3;
+    }
+
+    &--dark {
+        color: $color-blue-dark-1;
+    }
+}

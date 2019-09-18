@@ -1,0 +1,84 @@
+.form {
+    background-color: $color-grey-lightest;
+    padding: 7rem 0;
+    color: $color-blue-dark-1;
+
+    &__description {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        margin-bottom: $margin-bottom-small;
+    }
+
+    &__main {
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    &__group {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: $margin-bottom-small;
+        }
+    }
+   
+    &__info {
+        width: 48%;
+        height: 4.5rem;
+        @extend %form-style;
+
+        @extend %input-focus;
+    }
+
+    &__message {
+        width: 100%;
+        padding-top: 1.5rem;
+        resize: none;
+        overflow: auto;
+        @extend %form-style;
+
+        @extend %input-focus;
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-button {
+        height: 1.5rem;
+        width: 1.5rem;
+        border: 2px solid $color-blue-dark-1;
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__check-mark {
+        display: block;
+        height: 1.5rem;
+        width: 1.5rem;
+        fill: $color-blue-dark-1;
+        position: absolute;
+        top: -50%;
+        left: 0;
+        opacity: 0;
+        transition: opacity .2s;
+    }
+
+    &__radio-label {
+        font-weight: 500;
+        position: relative;
+        cursor: pointer;
+        padding-left: 3rem;
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button &__check-mark {
+        opacity: 1;
+    }
+
+}

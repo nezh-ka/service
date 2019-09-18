@@ -1,0 +1,40 @@
+.statistics {
+    display: flex;
+    color: $color-white;
+    margin-bottom: $margin-bottom-main;
+
+    &__item {
+        padding: 3rem 2rem;
+        flex: 0 0 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        height: 4rem;
+        width: 4rem;
+        fill: $color-white;
+        margin-right: 1rem;
+    }
+
+    &__count {
+        font-weight: 800;
+    }
+}
+
+.i-1 {
+    background-color: $color-blue-light-2;
+}
+
+.i-2 {
+    background-color: $color-blue-light-3;
+}
+
+.i-3 {
+    background-color: $color-pink-dark;
+}
+
+.i-4 {
+    background-color: $color-pink-light;
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>Dart Service Manager</title>
+    </head>
+    <body>
+        <div class="hidden">                 
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="001-expand-button" viewBox="0 0 306 306"><title>001-expand-button</title><polygon points="270.3,58.65 153,175.95 35.7,58.65 0,94.35 153,247.35 306,94.35 "/></symbol><symbol id="002-adjust" viewBox="0 0 507.451 507.45"><title>002-adjust</title><path d="M440.813,280.5c0-7.65,2.55-15.3,2.55-25.5s0-17.85-2.55-25.5l53.55-43.35c5.1-5.1,5.1-10.2,2.55-15.3l-51-89.25 c-2.55-2.55-7.649-5.1-15.3-2.55l-63.75,25.5c-12.75-10.2-28.05-17.85-43.35-25.5l-10.2-66.3C315.863,5.1,308.212,0,303.113,0 h-102c-5.101,0-12.75,5.1-12.75,10.2l-10.2,68.85c-15.3,5.1-28.05,15.3-43.35,25.5l-61.2-25.5c-7.65-2.55-12.75,0-17.851,5.1 l-51,89.25c-2.55,2.55,0,10.2,5.1,15.3l53.55,40.8c0,7.65-2.55,15.3-2.55,25.5s0,17.85,2.55,25.5l-53.55,43.35 c-5.1,5.101-5.1,10.2-2.55,15.301l51,89.25c2.55,2.55,7.649,5.1,15.3,2.55l63.75-25.5c12.75,10.2,28.05,17.85,43.35,25.5 l10.2,66.3c0,5.1,5.1,10.2,12.75,10.2h102c5.101,0,12.75-5.101,12.75-10.2l10.2-66.3c15.3-7.65,30.6-15.3,43.35-25.5l63.75,25.5 c5.101,2.55,12.75,0,15.301-5.101l51-89.25c2.55-5.1,2.55-12.75-2.551-15.3L440.813,280.5z M252.113,344.25 c-48.45,0-89.25-40.8-89.25-89.25s40.8-89.25,89.25-89.25s89.25,40.8,89.25,89.25S300.563,344.25,252.113,344.25z"/></symbol><symbol id="003-menu" viewBox="0 0 255 255"><title>003-menu</title><polygon points="0,63.75 127.5,191.25 255,63.75 "/></symbol><symbol id="004-round-account-button-with-user-inside" viewBox="0 0 510 510"><title>004-round-account-button-with-user-inside</title><path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M255,76.5 c43.35,0,76.5,33.15,76.5,76.5s-33.15,76.5-76.5,76.5c-43.35,0-76.5-33.15-76.5-76.5S211.65,76.5,255,76.5z M255,438.6 c-63.75,0-119.85-33.149-153-81.6c0-51,102-79.05,153-79.05S408,306,408,357C374.85,405.45,318.75,438.6,255,438.6z"/></symbol><symbol id="005-group" viewBox="0 0 561 561"><title>005-group</title><path d="M382.5,255c43.35,0,76.5-33.15,76.5-76.5S425.85,102,382.5,102S306,135.15,306,178.5S339.15,255,382.5,255z M178.5,255 c43.35,0,76.5-33.15,76.5-76.5S221.85,102,178.5,102S102,135.15,102,178.5S135.15,255,178.5,255z M178.5,306 C119.85,306,0,336.6,0,395.25V459h357v-63.75C357,336.6,237.15,306,178.5,306z M382.5,306c-7.65,0-15.3,0-25.5,2.55 c30.6,20.4,51,51,51,86.7V459h153v-63.75C561,336.6,441.15,306,382.5,306z"/></symbol><symbol id="006-send" viewBox="0 0 510 510"><title>006-send</title><path d="M459,51H51C22.95,51,0,73.95,0,102v306c0,28.05,22.95,51,51,51h408c28.05,0,51-22.95,51-51V102 C510,73.95,487.05,51,459,51z M459,153L255,280.5L51,153v-51l204,127.5L459,102V153z"/></symbol><symbol id="007-twitter-logo-silhouette" viewBox="0 0 612 612"><title>007-twitter-logo-silhouette</title><path d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411 c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513 c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101 c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104 c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194 c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485 c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z"/></symbol><symbol id="008-facebook-logo" viewBox="0 0 90 90"><title>008-facebook-logo</title><path id="Facebook__x28_alt_x29_" d="M90,15.001C90,7.119,82.884,0,75,0H15C7.116,0,0,7.119,0,15.001v59.998 C0,82.881,7.116,90,15.001,90H45V56H34V41h11v-5.844C45,25.077,52.568,16,61.875,16H74v15H61.875C60.548,31,59,32.611,59,35.024V41 h15v15H59v34h16c7.884,0,15-7.119,15-15.001V15.001z"/></symbol><symbol id="009-facebook-logo-1" viewBox="0 0 96.124 96.123"><title>009-facebook-logo-1</title><path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803 c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654 c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246 c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"/></symbol><symbol id="010-linkedin-logo" viewBox="0 0 430.117 430.117"><title>010-linkedin-logo</title><path id="LinkedIn" d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707 c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21 v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824 C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463 c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z M5.477,420.56h92.184v-277.32H5.477V420.56z"/></symbol><symbol id="011-expand-arrow" viewBox="0 0 306 306"><title>011-expand-arrow</title><polygon points="153,58.65 0,211.65 35.7,247.35 153,130.05 270.3,247.35 306,211.65 "/></symbol><symbol id="012-rss-symbol" viewBox="0 0 430.117 430.118"><title>012-rss-symbol</title><path id="RSS" d="M97.493,332.473c10.419,10.408,16.755,24.525,16.794,40.244c-0.04,15.687-6.375,29.809-16.755,40.17l-0.04,0.019 c-10.398,10.352-24.603,16.681-40.398,16.681c-15.775,0-29.944-6.348-40.34-16.699C6.384,402.526,0,388.422,0,372.717 c0-15.719,6.384-29.869,16.754-40.253v0.009c10.401-10.36,24.57-16.735,40.34-16.735C72.89,315.738,87.081,322.131,97.493,332.473z M97.493,332.464v0.009c0.019,0,0.019,0,0.019,0L97.493,332.464z M16.754,412.906c0,0,0,0,0-0.019c-0.019,0-0.019,0-0.019,0 L16.754,412.906z M0.046,146.259v82.129c53.618,0.033,104.328,21.096,142.278,59.104c37.943,37.888,58.917,88.675,59.003,142.477 h0.028v0.149h82.467c-0.065-78.233-31.866-149.099-83.279-200.549C149.122,178.126,78.285,146.308,0.046,146.259z M0.196,0v82.089 c191.661,0.14,347.464,156.184,347.594,348.028h82.327c-0.056-118.571-48.248-225.994-126.132-303.932 C226.073,48.274,118.721,0.051,0.196,0z"/></symbol><symbol id="013-behance-logo" viewBox="0 0 430.123 430.123"><title>013-behance-logo</title><path id="Behance" d="M388.432,119.12H280.659V92.35h107.782v26.77H388.432z M208.912,228.895 c6.954,10.771,10.429,23.849,10.429,39.203c0,15.878-3.918,30.122-11.889,42.704c-5.071,8.326-11.367,15.359-18.932,21.021 c-8.52,6.548-18.607,11.038-30.203,13.437c-11.633,2.403-24.224,3.617-37.787,3.617H0V81.247h129.25 c32.579,0.53,55.676,9.969,69.315,28.506c8.184,11.369,12.239,25.011,12.239,40.868c0,16.362-4.104,29.454-12.368,39.401 c-4.597,5.577-11.388,10.65-20.378,15.229C191.675,210.236,202.007,218.086,208.912,228.895z M61.722,186.76h56.632 c11.638,0,21.046-2.212,28.292-6.634c7.241-4.415,10.854-12.263,10.854-23.531c0-12.449-4.784-20.712-14.375-24.689 c-8.244-2.763-18.792-4.186-31.591-4.186H61.722V186.76z M162.953,264.275c0-13.902-5.682-23.513-17.023-28.67 c-6.342-2.931-15.29-4.429-26.763-4.536H61.722v71.322h56.556c11.619,0,20.612-1.521,27.102-4.694 C157.084,291.863,162.953,280.76,162.953,264.275z M428.419,220.736c1.302,8.756,1.891,21.46,1.652,38.065H290.493 c0.77,19.266,7.421,32.739,20.035,40.449c7.607,4.835,16.83,7.196,27.63,7.196c11.388,0,20.67-2.879,27.815-8.797 c3.893-3.137,7.327-7.565,10.296-13.152h51.16c-1.34,11.379-7.5,22.92-18.57,34.648c-17.151,18.641-41.205,27.988-72.097,27.988 c-25.52,0-48.011-7.883-67.533-23.592C249.772,307.777,240,282.211,240,246.746c0-33.257,8.773-58.712,26.378-76.43 c17.67-17.751,40.474-26.586,68.583-26.586c16.661,0,31.68,2.978,45.079,8.965c13.357,5.993,24.396,15.425,33.09,28.388 C420.998,192.499,426.058,205.699,428.419,220.736z M378.062,225.73c-0.938-13.322-5.386-23.405-13.395-30.296 c-7.943-6.91-17.866-10.379-29.706-10.379c-12.886,0-22.836,3.708-29.906,10.996c-7.118,7.273-11.547,17.161-13.362,29.68H378.062 L378.062,225.73z"/></symbol><symbol id="014-internet" viewBox="0 0 430.117 430.118"><title>014-internet</title><path id="Dribbble" d="M215.05,0C96.274,0.009,0,96.289,0,215.068c0,118.758,96.274,215.049,215.05,215.049 c118.776,0,215.054-96.291,215.067-215.049C430.104,96.289,333.826,0.009,215.05,0z M346.819,111.506 c20.983,26.645,34.121,59.638,35.778,95.668c-24.278-5.153-47.217-7.661-68.602-7.661v-0.005h-0.158 c-17.217,0-33.375,1.563-48.604,4.264c-3.701-9.071-7.453-17.784-11.233-26.129C287.916,162.767,320.47,141.585,346.819,111.506z M215.05,47.28c39.576,0,75.882,13.836,104.626,36.87c-21.996,26.334-51.029,45.406-82.393,58.873 c-22.038-42.615-43.333-73.101-57.89-91.739C190.916,48.727,202.81,47.28,215.05,47.28z M140.941,64.77 c11.646,13.756,34.963,44.013,59.867,91.253c-50.649,15.077-101.651,18.619-132.51,18.61c-0.88,0-1.75,0-2.604-0.009h-0.028 c-5.197,0-9.666-0.082-13.397-0.196C64.308,126.254,97.311,86.357,140.941,64.77z M47.266,215.068c0-0.789,0.028-1.591,0.075-2.417 c4.791,0.177,10.935,0.329,18.33,0.329h0.042c33.727-0.22,92.614-3.038,152.292-21.879c3.253,7.113,6.473,14.519,9.656,22.208 c-39.853,13.329-71.241,34.564-94.457,55.711C110.854,289.377,95.754,309.54,86.931,323 C62.242,293.769,47.279,256.204,47.266,215.068z M215.05,382.859c-37.339,0-71.754-12.349-99.673-33.07 c5.934-9.773,18.657-28.535,38.917-47.922c20.845-19.975,49.62-40.538,87.19-52.775c12.77,35.797,24.325,76.718,33.127,122.781 C256.068,378.934,236.032,382.859,215.05,382.859z M310.011,353.065c-8.513-41.659-19.215-79.224-30.966-112.748 c10.897-1.563,22.336-2.445,34.41-2.445h0.434h0.028h0.028c20.012,0,42.003,2.487,65.852,7.906 C371.541,290.143,345.844,328.352,310.011,353.065z"/></symbol><symbol id="015-target" viewBox="0 0 953 953"><title>015-target</title><path d="M430.589,953c236.6,0,428.401-191.801,428.401-428.4c0-72.799-18.102-141.299-50.102-201.299c-3.5,0.5-7.1,0.7-10.6,0.7 c-2,0-4.1-0.1-6.199-0.2l-54.5-4.2l-39.201,39.2c29.9,48.2,47.201,105,47.201,165.799c0,173.9-141,314.9-314.901,314.9 c-173.899,0-315-141-315-314.9c0-173.899,141-314.899,314.9-314.899c60.901,0,117.7,17.3,165.799,47.2l35.5-35.5l-4.799-62.5 c-0.4-5-0.301-10,0.199-14.9c-58.9-30.5-125.799-47.8-196.799-47.8c-236.5,0-428.3,191.8-428.3,428.399S193.989,953,430.589,953z"/><path d="M430.589,413.9c2.8,0,5.6,0.101,8.4,0.3l79.1-79.1l1.699-1.7c-27.1-12.7-57.299-19.8-89.2-19.8 c-116.5,0-210.9,94.4-210.9,210.9c0,116.5,94.4,211,210.9,211c116.5,0,210.901-94.4,210.901-210.9 c0-31.9-7.102-62.099-19.801-89.2l-1.699,1.7l-79.102,79.099c0.201,2.801,0.301,5.602,0.301,8.4 c0,61.1-49.5,110.701-110.7,110.701c-61.2,0-110.601-49.602-110.601-110.701C319.889,463.5,369.489,413.9,430.589,413.9z"/><path d="M872.089,142.6l25.4-25.4c11.6-11.6,11.6-30.3,0-41.9l-17.602-17.7c-5.799-5.8-13.398-8.7-20.898-8.7 s-15.201,2.9-20.9,8.7l-29.1,29.1l-6-77.5c-0.4-5.7-5.102-9.2-10-9.2c-2.5,0-5,0.9-7,2.9l-114.5,114.5 c-10.301,10.3-15.602,24.6-14.5,39.2l0.299,4.5l5.5,71.7l-41.4,41.4l-74.5,74.5l-1.699,1.7l-72.1,72.101l-32,32 c-4.2,4.199-6.8,9.8-7.2,15.699l-2,25.101c-1.2,14.6,10.4,27,24.9,27c0.399,0,0.8,0,1.3,0l26.5-1.301 c6.199-0.301,12.1-2.9,16.4-7.301L532.689,482l72.1-72.1l1.701-1.7l74.5-74.5l45-45l65.398,5l2.9,0.2c1.301,0.1,2.6,0.1,3.801,0.1 c13.199,0,25.9-5.2,35.4-14.6L947.888,165c6-6,2.201-16.4-6.299-17L872.089,142.6z"/></symbol><symbol id="016-download" viewBox="0 0 299.998 299.998"><title>016-download</title><path d="M149.995,0C67.156,0,0,67.159,0,149.997c0,82.837,67.156,150,149.995,150s150.003-67.163,150.003-150 C299.997,67.159,232.834,0,149.995,0z M110.967,105.357c2.075-2.075,4.793-3.112,7.511-3.112c2.718,0,5.434,1.037,7.508,3.112 l13.297,13.295v-3.911V62.477c0-5.867,4.754-10.621,10.621-10.621s10.621,4.754,10.621,10.621v52.263v4.63l4.63-4.63l9.386-9.384 c2.075-2.075,4.79-3.112,7.508-3.112s5.436,1.037,7.511,3.112c2.552,2.549,3.522,6.079,2.933,9.384 c0,0.003-0.003,0.005-0.003,0.008c-0.044,0.239-0.119,0.469-0.179,0.703c-0.091,0.366-0.189,0.729-0.322,1.084 c-0.088,0.239-0.189,0.472-0.296,0.705c-0.166,0.371-0.358,0.726-0.568,1.079c-0.112,0.187-0.215,0.373-0.34,0.552 c-0.363,0.524-0.76,1.032-1.227,1.499l-15.115,15.115l-16.591,16.591c-2.077,2.075-4.793,3.105-7.508,3.105 c-0.026,0-0.052,0-0.078,0s-0.054,0-0.078,0c-2.715,0-5.431-1.03-7.508-3.105l-16.591-16.591l-15.115-15.115 c-0.467-0.467-0.864-0.973-1.222-1.496c-0.127-0.184-0.231-0.373-0.345-0.56c-0.207-0.35-0.397-0.703-0.563-1.069 c-0.109-0.239-0.213-0.475-0.301-0.718c-0.127-0.348-0.223-0.7-0.314-1.056c-0.062-0.246-0.143-0.485-0.187-0.734 C107.444,111.436,108.412,107.906,110.967,105.357z M231.574,209.315h-0.003c0,14.337-14.057,25.568-32.005,25.568h-99.132 c-17.945,0-32.005-11.23-32.005-25.568V140.31c0-12.117,10.058-21.988,24.004-24.761c0.604,5.981,3.224,11.526,7.534,15.834 l4.108,4.108h-3.641c-7.265,0-11.256,3.621-11.256,4.819v69.005c0,1.201,3.992,4.819,11.256,4.819h99.135 c7.265,0,11.256-3.621,11.256-4.819V140.31c0-1.198-3.992-4.819-11.256-4.819h-3.12l4.111-4.111 c4.282-4.279,6.894-9.786,7.516-15.727c13.681,2.913,23.498,12.69,23.498,24.66V209.315z"/></symbol><symbol id="017-euro" viewBox="0 0 512 512"><title>017-euro</title><path d="m379.078125 256c0-21.792969 12.855469-40.777344 31.746094-49.328125-21.203125-66.3125-84.210938-113.132813-154.824219-113.132813s-133.621094 46.820313-154.824219 113.132813c18.890625 8.550781 31.746094 27.535156 31.746094 49.328125s-12.855469 40.777344-31.746094 49.332031c21.203125 66.308594 84.210938 113.128907 154.824219 113.128907s133.621094-46.820313 154.824219-113.128907c-18.890625-8.554687-31.746094-27.539062-31.746094-49.332031zm-103.386719-39.382812c8.15625 0 14.769532 6.609374 14.769532 14.765624 0 8.160157-6.613282 14.769532-14.769532 14.769532h-44.308594v19.695312h44.308594c8.15625 0 14.769532 6.609375 14.769532 14.769532 0 8.15625-6.613282 14.765624-14.769532 14.765624h-42.246094c3.808594 8.6875 12.480469 14.769532 22.554688 14.769532h39.382812c8.160157 0 14.769532 6.613281 14.769532 14.769531s-6.609375 14.769531-14.769532 14.769531h-39.382812c-26.496094 0-48.59375-19.132812-53.238281-44.308594h-10.761719c-8.15625 0-14.769531-6.609374-14.769531-14.765624 0-8.160157 6.613281-14.769532 14.769531-14.769532h9.847656v-19.695312h-9.847656c-8.15625 0-14.769531-6.609375-14.769531-14.769532 0-8.15625 6.613281-14.765624 14.769531-14.765624h10.761719c4.644531-25.175782 26.742187-44.308594 53.238281-44.308594h39.382812c8.160157 0 14.769532 6.613281 14.769532 14.769531s-6.609375 14.769531-14.769532 14.769531h-39.382812c-10.074219 0-18.75 6.082032-22.554688 14.769532zm0 0"/><path d="m437.019531 74.980469c-48.351562-48.351563-112.640625-74.980469-181.019531-74.980469s-132.667969 26.628906-181.019531 74.980469c-48.351563 48.351562-74.980469 112.640625-74.980469 181.019531s26.628906 132.667969 74.980469 181.019531c48.351562 48.351563 112.640625 74.980469 181.019531 74.980469s132.667969-26.628906 181.019531-74.980469c48.351563-48.351562 74.980469-112.640625 74.980469-181.019531s-26.628906-132.667969-74.980469-181.019531zm6.273438 223.410156c-9.429688 41.824219-33.074219 79.792969-66.578125 106.917969-34.007813 27.53125-76.878906 42.691406-120.714844 42.691406s-86.707031-15.160156-120.714844-42.691406c-33.503906-27.121094-57.148437-65.09375-66.578125-106.917969-1.910156-8.476563 4.171875-16.984375 12.796875-17.929687 12.472656-1.371094 21.878906-11.886719 21.878906-24.460938s-9.40625-23.089844-21.878906-24.460938c-8.625-.945312-14.707031-9.453124-12.796875-17.929687 9.429688-41.824219 33.074219-79.792969 66.578125-106.917969 34.007813-27.53125 76.878906-42.691406 120.714844-42.691406s86.707031 15.160156 120.714844 42.691406c33.503906 27.121094 57.148437 65.09375 66.578125 106.917969 1.910156 8.476563-4.171875 16.984375-12.792969 17.929687-12.476562 1.371094-21.882812 11.886719-21.882812 24.460938s9.40625 23.089844 21.878906 24.460938c8.625.945312 14.707031 9.453124 12.796875 17.929687zm0 0"/></symbol><symbol id="018-graph" viewBox="0 0 512.008 512.008"><title>018-graph</title><path d="M510.352,108.04c-1.097-2.646-2.689-5.012-4.668-6.992c-0.129-0.129-0.258-0.151-0.366-0.258 c-1.936-1.829-4.152-3.356-6.647-4.389c-2.044-0.839-4.195-1.097-6.346-1.291c-0.645-0.043-1.183-0.344-1.829-0.344H318.395 c-11.896,0-21.513,9.616-21.513,21.513s9.616,21.513,21.513,21.513h120.385L268.485,309.054l-64.796-82.953 c-3.743-4.797-9.315-7.766-15.338-8.218c-6.26-0.452-12.026,1.678-16.414,5.83L6.72,380.132 c-8.627,8.175-8.992,21.792-0.839,30.419c4.26,4.453,9.939,6.69,15.64,6.69c5.314,0,10.627-1.958,14.779-5.873l148.028-140.155 l65.248,83.533c3.808,4.883,9.509,7.874,15.683,8.239c6.174,0.344,12.176-1.936,16.543-6.303l187.181-188.257V288.38 c0,11.896,9.616,21.513,21.513,21.513c11.896,0,21.513-9.616,21.513-21.513V116.28v-0.022 C511.987,113.44,511.427,110.665,510.352,108.04z"/></symbol><symbol id="019-check-mark" viewBox="0 0 352.62 352.62"><title>019-check-mark</title><path d="M337.222,22.952c-15.912-8.568-33.66,7.956-44.064,17.748c-23.867,23.256-44.063,50.184-66.708,74.664 c-25.092,26.928-48.348,53.856-74.052,80.173c-14.688,14.688-30.6,30.6-40.392,48.96c-22.032-21.421-41.004-44.677-65.484-63.648 c-17.748-13.464-47.124-23.256-46.512,9.18c1.224,42.229,38.556,87.517,66.096,116.28c11.628,12.24,26.928,25.092,44.676,25.704 c21.42,1.224,43.452-24.48,56.304-38.556c22.645-24.48,41.005-52.021,61.812-77.112c26.928-33.048,54.468-65.485,80.784-99.145 C326.206,96.392,378.226,44.983,337.222,22.952z M26.937,187.581c-0.612,0-1.224,0-2.448,0.611 c-2.448-0.611-4.284-1.224-6.732-2.448l0,0C19.593,184.52,22.653,185.132,26.937,187.581z"/></symbol></svg>
+        </div>
+        <header class="header-wrapper">
+            <div class="header">
+                <div class="logo">
+                    <svg class="logo__img">
+                        <use xlink:href="#015-target">
+                    </svg>
+                    <h3 class="logo__text"><span>Dart</span> <br> service manager</h3>
+                </div>
+    
+                <div class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-dark">Home</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-dark">Service</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-dark">Extension</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-dark">Pricing</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-dark">Help</a></li>
+                    </ul>
+                </div>
+    
+                <a href="#" class="btn header_btn">sign up</a>
+            </div>
+
+            <div class="header-content">
+                <div class="header-content__left">
+                    <h1 class="heading-primary u-margin-bottom-large">Lorem ipsum <br> dolor sit amet</h1>
+                    <p class="paragraph paragraph--white u-margin-bottom-large">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                    
+                    <div class="btn-wrapper">
+                        <a href="#" class="btn btn--blue">Buy now</a>
+                        <a href="#" class="btn btn--white">Try for free</a>
+                    </div>     
+                </div>
+
+                <div class="header-content__right"></div>
+                 
+            </div>
+        </header>
+
+        <main>
+            <div class="overview">
+                <div class="overview__description">
+                    <h1 class="heading-secondary u-margin-bottom-small">Easy & Useful</h1>
+                    <h2 class="heading-tertiary heading-tertiary--light  u-margin-bottom-small">Project Management Tool</h2>
+                    <p class="paragraph paragraph--light-1">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                </div>
+
+                <div class="overview__titles">
+                    <div class="overview__titles-item">
+                        <img src="img/calendar.png" alt="Icon 1" class="titles-item-img u-margin-bottom-small">
+                        <h2 class="heading-tertiary heading-tertiary--dark u-margin-bottom-small">Title Goes Here</h2>
+                        <p class="paragraph paragraph--light-2">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                    </div>
+
+                    <div class="overview__titles-item">
+                        <img src="img/teen.png" alt="Icon 1" class="titles-item-img u-margin-bottom-small">
+                        <h2 class="heading-tertiary heading-tertiary--dark u-margin-bottom-small">Title Goes Here</h2>
+                        <p class="paragraph paragraph--light-2">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                    </div>
+
+                    <div class="overview__titles-item">
+                        <img src="img/fire.png" alt="Icon 1" class="titles-item-img u-margin-bottom-small">
+                        <h2 class="heading-tertiary heading-tertiary--dark u-margin-bottom-small">Title Goes Here</h2>
+                        <p class="paragraph paragraph--light-2">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                    </div>
+                </div>
+
+                <div class="overview__button">
+                    <a href="#" class="btn btn-main btn--green">Get started</a>
+                </div>
+            </div>
+
+            <div class="statistics">
+                <div class="statistics__item i-1">
+                    <svg class="statistics__img">
+                        <use xlink:href="#017-euro">
+                    </svg>
+                    <p class="statistics__count">12000+ <br> Business</p>
+                </div>
+                <div class="statistics__item i-2">
+                    <svg class="statistics__img">
+                        <use xlink:href="#016-download">
+                    </svg>
+                    <p class="statistics__count">60000+ <br> Downloads</p>
+                </div>
+                <div class="statistics__item i-3">
+                    <svg class="statistics__img">
+                        <use xlink:href="#004-round-account-button-with-user-inside">
+                    </svg>
+                    <p class="statistics__count">30000+ <br> Free Installs</p>
+                </div>
+                <div class="statistics__item i-4">
+                    <svg class="statistics__img">
+                        <use xlink:href="#016-download">
+                    </svg>
+                    <p class="statistics__count">40000+ <br> Pro Users</p>
+                </div>
+            </div>
+
+            <div class="services">
+                <div class="services__description">
+                    <h1 class="heading-secondary u-margin-bottom-small">Services</h1>
+                    <p class="paragraph paragraph--light-1">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                </div>
+                <div class="services__main">
+                    <div class="services__item">
+                        <div class="services__top">
+                            <svg class="services__img-left">
+                                <use xlink:href="#018-graph">
+                            </svg>
+                            <h3 class="services__heading">Statistics</h3>
+                            <svg class="services__img-right">
+                                <use xlink:href="#003-menu">
+                            </svg>
+                        </div>
+                        
+                        <div class="hidden-section hidden-section--1">
+                            <img src="img/statistic.jpg" alt="Statistics" class="hidden-section__img">
+                            <p class="paragraph paragraph--dark">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+
+                    <div class="services__item">
+                        <div class="services__top">
+                            <svg class="services__img-left">
+                                <use xlink:href="#006-send">
+                            </svg>
+                            <h3 class="services__heading">Inbox</h3>
+                            <svg class="services__img-right">
+                                <use xlink:href="#003-menu">
+                            </svg>
+                        </div>
+
+                        <div class="hidden-section hidden-section--2">
+                            <img src="img/statistic.jpg" alt="Statistics" class="hidden-section__img">
+                            <p class="paragraph paragraph--dark">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+
+                    <div class="services__item">
+                        <div class="services__top">
+                            <svg class="services__img-left">
+                                <use xlink:href="#005-group">
+                            </svg>
+                            <h3 class="services__heading">Team</h3>
+                            <svg class="services__img-right">
+                                <use xlink:href="#003-menu">
+                            </svg>
+                        </div>
+
+                        <div class="hidden-section hidden-section--3">
+                            <img src="img/statistic.jpg" alt="Statistics" class="hidden-section__img">
+                            <p class="paragraph paragraph--dark">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+
+                    <div class="services__item">
+                        <div class="services__top">
+                            <svg class="services__img-left">
+                                <use xlink:href="#002-adjust">
+                            </svg>
+                            <h3 class="services__heading">Settings</h3>
+                            <svg class="services__img-right">
+                                <use xlink:href="#003-menu">
+                            </svg>
+                        </div>
+
+                        <div class="hidden-section hidden-section--4">
+                            <img src="img/statistic.jpg" alt="Statistics" class="hidden-section__img">
+                            <p class="paragraph paragraph--dark">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+
+                    <div class="services__item">
+                        <div class="services__top">
+                            <svg class="services__img-left">
+                                <use xlink:href="#012-rss-symbol">
+                            </svg>
+                            <h3 class="services__heading">Feed</h3>
+                            <svg class="services__img-right">
+                                <use xlink:href="#003-menu">
+                            </svg>
+                        </div>
+
+                        <div class="hidden-section hidden-section--5">
+                            <img src="img/statistic.jpg" alt="Statistics" class="hidden-section__img">
+                            <p class="paragraph paragraph--dark">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review">
+                <div class="review__description">
+                    <h1 class="review__heading u-margin-bottom-large">What our customers have to say about us.</h1>
+                    <p class="paragraph paragraph--white u-margin-bottom-huge">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                    <a href="#" class="btn btn--blue">Get started</a>
+                </div>
+
+                <div class="review__users">
+
+                    <div class="review__item">
+                        <img src="img/user-1.jpg" alt="User1" class="review__img">
+                        
+                        <div class="review__text-wrapper">
+                            <svg class="review__icon">
+                                <use xlink:href="#011-expand-arrow">
+                            </svg>
+                            <div class="review__text">
+                                <h3 class="review__user-name u-margin-bottom-small">John Doe</h3>
+                                <p class="paragraph paragraph--light-2">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                    <div class="review__item">
+
+                        <img src="img/user-2.jpg" alt="User2" class="review__img">
+
+                        <div class="review__text-wrapper">
+                            <div class="review__text">
+                                <h3 class="review__user-name u-margin-bottom-small">Khalessi</h3>
+                                <p class="paragraph paragraph--light-2">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                            </div>
+                            <svg class="review__icon">
+                                <use xlink:href="#001-expand-button">
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="team">
+                <div class="team__description">
+                    <h1 class="heading-secondary u-margin-bottom-small">Our team</h1>
+                    <p class="paragraph paragraph--light-1">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                </div>
+                <div class="team__about u-margin-bottom-large">
+                    <div class="team__photo-wrap">
+                        <img src="img/user-5.jpg" alt="Photo 1" class="team__photo p--1">
+                    </div>
+                    <div class="team__photo-wrap white-border">
+                        <img src="img/user-4.jpg" alt="Photo 2" class="team__photo team__photo--2">
+                    </div>
+                    <div class="team__photo-wrap">
+                        <img src="img/user-3.jpg" alt="Photo 3" class="team__photo p--3">
+                    </div>
+                </div>
+                <div class="team__text team__text--1 u-margin-bottom-large">
+                    <h3 class="team__photo-name u-margin-bottom-small">Sophie Turnere</h3>
+                    <p class="paragraph paragraph--light-3">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                </div>
+
+                <div class="team__text team__text--2 u-margin-bottom-large">
+                    <h3 class="team__photo-name u-margin-bottom-small">John Doe</h3>
+                    <p class="paragraph paragraph--light-3">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                </div>
+
+                <div class="team__text team__text--3 u-margin-bottom-large">
+                    <h3 class="team__photo-name u-margin-bottom-small">John Doe</h3>
+                    <p class="paragraph paragraph--light-3">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut. Te summo feugait nec. Modus ipsum eos no. Odio mazim et eam.</p>
+                </div>
+                <div class="team__icons">
+                    <a href="#" class="team__icons--link">
+                        <svg class="team__icon">
+                            <use xlink:href="#007-twitter-logo-silhouette">
+                        </svg>
+                    </a>
+                    <a href="#" class="team__icons--link">
+                        <svg class="team__icon">
+                            <use xlink:href="#009-facebook-logo-1">
+                        </svg>
+                    </a>
+                    <a href="#" class="team__icons--link">
+                        <svg class="team__icon">
+                            <use xlink:href="#010-linkedin-logo">
+                        </svg>
+                    </a>
+                    <a href="#" class="team__icons--link">
+                        <svg class="team__icon">
+                            <use xlink:href="#014-internet">
+                        </svg>
+                    </a>
+                    <a href="#" class="team__icons--link">
+                        <svg class="team__icon">
+                            <use xlink:href="#013-behance-logo">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form">
+                <div class="form__description">
+                    <h1 class="heading-secondary u-margin-bottom-small">Contact Us</h1>
+                    <p class="paragraph paragraph--dark">Lorem ipsum dolor sit amet, facer oratio ornatus sit te. Te persecuti interesset mel, pri aeque suavitate ut.</p>
+                </div>
+                <form action="#" class="form__main">
+                    <div class="form__group">
+                        <input type="text" placeholder="First Name" class="form__info">
+                        <input type="text" placeholder="Last Name" class="form__info">
+                    </div>
+                    <div class="form__group">
+                        <input type="email" placeholder="Email" class="form__info">
+                        <input type="tel" placeholder="Phone" class="form__info">
+                    </div>
+                    <div class="form__group">
+                        <textarea name="text" id="" cols="30" rows="10" placeholder="Message" class="form__message"></textarea>
+                    </div>
+                    <div class="form__group">
+                        <div class="form__radio-group">
+                            <input type="radio" class="form__radio-input" id="newsletter" name="size">
+                            <label for="newsletter" class="form__radio-label">
+                                <span class="form__radio-button">
+                                    <svg class="form__check-mark">
+                                        <use xlink:href="#019-check-mark">
+                                    </svg>
+                                </span>
+                                subscribe to the newsletter
+                            </label>
+                        </div>
+                        
+                        <a href="#" class="btn btn--green">Send</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top u-margin-bottom-large">
+                <div class="logo">
+                    <svg class="logo__img">
+                        <use xlink:href="#015-target">
+                    </svg>
+                    <h3 class="logo__text"><span>Dart</span> <br> service manager</h3>
+                </div>
+                <div class="main-nav">
+                    <ul class="main-nav__list">
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-light">Home</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-light">Service</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-light">Extension</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-light">Pricing</a></li>
+                        <li class="main-nav__item"><a href="#" class="main-nav__link main-nav__link--hover-light">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__center">
+                <ul class="footer__list">
+                    <li class="footer__items"><a href="#" class="footer__link">Privecy polisy</a></li>
+                    <li class="footer__items"><a href="#" class="footer__link">About us</a></li>
+                    <li class="footer__items"><a href="#" class="footer__link">About us</a></li>
+                </ul>
+
+                <div class="footer__icons">
+                    <a href="#" class="footer__icons-link">
+                        <svg class="footer__icon">
+                            <use xlink:href="#008-facebook-logo">
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons-link">
+                        <svg class="footer__icon">
+                            <use xlink:href="#007-twitter-logo-silhouette">
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons-link">
+                        <svg class="footer__icon">
+                            <use xlink:href="#010-linkedin-logo">
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons-link">
+                        <svg class="footer__icon">
+                            <use xlink:href="#014-internet">
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__icons-link">
+                        <svg class="footer__icon">
+                            <use xlink:href="#013-behance-logo">
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+.review {
+    padding: 0 3rem;
+    background-image: linear-gradient(to right bottom, 
+                      rgba($color-primary, .8), 
+                      rgba($color-primary-darker, .8)), 
+                      url(../img/bg-services.jpg);
+    background-size: cover;
+    background-position: center;
+    color: $color-white;
+    margin-bottom: $margin-bottom-main;
+    display: flex;
+    align-items: center;
+
+    &__description {
+        flex: 0 0 40%;
+        margin-right: auto;
+    }
+
+    &__users {
+       flex: 0 0 50%;
+    }
+
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-of-type) {
+            margin-bottom: $margin-bottom-small;
+        }
+    }
+
+    &__img {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        margin-right: 3rem;
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-white;
+        cursor: pointer;
+        transition: all .3s;
+        margin: 3rem 0;
+
+        &:hover {
+            fill: $color-blue-dark-1;
+        }
+    }
+
+    &__text {
+        background-color: $color-white;
+        box-shadow: 0 .3rem 1rem rgba($color-black, .1);
+        border-radius: 4px;
+        padding: 3rem;
+    }
+
+    &__user-name {
+        color: $color-blue-dark-1;
+        font-weight: 700;
+    }
+}

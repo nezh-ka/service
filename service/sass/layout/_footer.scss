@@ -1,0 +1,65 @@
+.footer {
+    background-color: $color-blue-dark-1;
+    padding: 7rem 3rem;
+    color: $color-white;
+
+    &__top {
+        position: relative;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__center {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icons-link {
+
+            &:not(:last-of-type) {
+                margin-right: 1.5rem;
+            }
+    }
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: $color-grey-dark-1;
+
+        &:hover {
+            fill: $color-white;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__items {
+        position: relative;
+        &:not(:last-of-type) {
+            margin-right: 3rem;
+        }
+ 
+        &:first-of-type {
+            list-style: none;
+        }
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            color:  $color-grey-dark-1;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-white;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.header_btn {
+    
+    &:link,
+    &:visited {
+        color: currentColor;
+        padding: 5px 15px;
+        border: 1px solid $color-white;
+    }
+
+    &:hover {
+        color: $color-blue-dark-1;
+        border: 1px solid $color-blue-dark-1;
+    }
+
+    &:active {
+       background-color: rgba(#fff, .07);
+    }
+
+}
+
+.btn {
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
+
+}
+
+.btn-wrapper {
+    display: flex;
+}
+
+.btn--blue {
+    margin-right: 2rem;
+
+    &:link,
+    &:visited {
+      background-color: $color-blue-dark-1;
+      color: $color-white;
+      @include btn-main;
+      transition: all .3s;
+    }
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-blue-dark-1;
+    }
+
+    @include btn-active;
+}
+
+.btn--white {
+
+    &:link,
+    &:visited {
+        background-color: $color-white;
+        color: $color-blue-dark-1;
+        @include btn-main;
+        transition: all .3s;
+    }
+
+    &:hover {
+        background-color: $color-blue-dark-1;
+        color: $color-white;
+    }
+
+    @include btn-active;
+}
+
+.btn--green {
+    background-color: $color-primary;
+    color: $color-white;
+    @include btn-main;
+    transition: all .3s;
+
+    @include btn-active;
+}

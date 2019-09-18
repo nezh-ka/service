@@ -1,0 +1,38 @@
+.overview {
+    background-color: #fff;
+    padding: 0 3rem;
+    margin-bottom: $margin-bottom-main;
+
+    &__description {
+        margin: 0 auto;
+        margin-bottom: $margin-bottom-medium;
+        width: 50%;
+        text-align: center;
+    }
+
+    &__titles {
+        display: flex;
+        text-align: center;
+        color: $color-blue-dark-1;
+        margin-bottom: $margin-bottom-medium;
+
+    }
+
+    &__titles-item {
+
+        &:not(:last-child) {
+            margin-right: 10rem;
+        }
+    }
+
+
+    &__button {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.titles-item-img {
+    height: 8rem;
+    width: auto;
+}

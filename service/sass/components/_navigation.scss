@@ -1,0 +1,38 @@
+.main-nav {
+    flex: 0 0 40%;
+    font-weight: 500;
+
+     &__list {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+     }
+
+     &__item {
+        display: inline-block;
+
+        &:not(:last-child){
+            margin-right: .5rem;
+        }
+     }
+
+     &__link {
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: currentColor;
+        }
+
+        &--hover-dark:hover,
+        &--hover-dark:active {
+            color: $color-blue-dark-1;
+        }
+
+        &--hover-light:hover,
+        &--hover-light:active {
+            color: $color-grey-dark-1;
+        }
+
+     }
+    }
